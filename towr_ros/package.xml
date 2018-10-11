@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>towr_ros</name>
-  <version>1.1.0</version>
+  <version>1.4.0</version>
   <description>
-    The ROS dependent parts of TOWR.
-    <p>
-    Formulates a variety
-    of robots and terrains and a keyboard user interface to switch between them.
-    It also visualizes the produced motions plan in rviz using
+    A ROS dependent wrapper for
+    <a href="http://wiki.ros.org/towr">towr</a>.
+    Adds a keyboard user interface to set different goal states, motions
+    and robots and visualizes the produced motions plan in rviz using
     <a href="http://wiki.ros.org/xpp">xpp</a>.
-    </p> 
   </description>
 
-  <author email="winklera@ethz.ch">Alexander W. Winkler</author>
-  <maintainer email="winklera@ethz.ch">Alexander W. Winkler</maintainer>
+  <author>Alexander W. Winkler</author>
+  <maintainer email="alexander.w.winkler@gmail.com">Alexander W. Winkler</maintainer>
   <license>BSD</license>
   
   <url type="website">http://github.com/ethz-adrl/towr</url>
@@ -21,15 +19,20 @@
 
   <buildtool_depend>catkin</buildtool_depend>
     
+  <depend>libncurses-dev</depend>
+  
   <depend>message_runtime</depend>
   <depend>message_generation</depend>
   <depend>std_msgs</depend>
+  <depend>visualization_msgs</depend>
   <depend>roscpp</depend>
   <depend>rosbag</depend>
- 
   <depend>xpp_states</depend>
   <depend>xpp_msgs</depend>
+  <depend>towr</depend>
   
-  <depend>towr_core</depend>
-  <depend>ifopt_ipopt</depend>
+  <exec_depend>xterm</exec_depend>
+  <exec_depend>xpp_hyq</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>rqt_bag</exec_depend>
 </package>

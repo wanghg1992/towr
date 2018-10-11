@@ -44,7 +44,6 @@ namespace towr {
  */
 class TowrUserInterface {
 public:
-
   /**
    * @brief  Constructs default object to interact with framework.
    */
@@ -64,19 +63,23 @@ private:
   void PublishCommand();
 
   xpp::State3dEuler goal_geom_;
-  int kMaxNumGaits_ = 8;
-  int terrain_id_;
-  int gait_combo_id_;
-  bool replay_trajectory_;
-  bool use_solver_snopt_;
+  int terrain_;
+  int gait_combo_;
+  int robot_;
+  bool visualize_trajectory_;
+  bool play_initialization_;
+  double replay_speed_;
+  bool plot_trajectory_;
   bool optimize_;
   bool publish_optimized_trajectory_;
   double total_duration_;
+  bool optimize_phase_durations_;
 
   int AdvanceCircularBuffer(int& curr, int max) const;
 
   void PrintVector(const Eigen::Vector3d& v) const;
-  void PrintHelp() const;
+  void PrintVector2D(const Eigen::Vector2d& v) const;
+  void PrintScreen() const;
 };
 
 } /* namespace towr */
